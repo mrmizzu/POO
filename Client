@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Cliente extends Pessoa{
+	
+	public void Pagamento() {
+		String formasPagamento, tipoDePagamento;
+		Scanner leia = new Scanner(System.in);
+		System.out.println("Selecione o número para a forma de pagamento, 1 para dinheiro e 2 para cartão.");
+		formasPagamento = leia.nextLine();
+		
+		
+		while ((formasPagamento != "1") && (formasPagamento != "2"))
+		{
+			switch (formasPagamento){
+			case "1":
+				formasPagamento = "Dinheiro";
+				break;
+			case "2":
+				formasPagamento = "Cartao";
+        
+        	
+				System.out.println("Informe qual bandeira é seu cartão.");
+				String bandeira;
+				bandeira = leia.nextLine();
+    	
+					System.out.println("Selecione o número para a forma de pagamento em cartão, 1 para Débito e 2 para crédito");
+					tipoDePagamento = leia.nextLine();
+            
+					switch (tipoDePagamento){
+					case "1":
+						tipoDePagamento = "Débito";
+						
+                 
+					case "2":
+						tipoDePagamento = "Crédito";
+						
+                    defaul: 
+                    System.out.println("Forma de pagamento indisponivel.");
+					}
+			defaul: 
+			System.out.println("Forma de pagamento indisponivel.");		
+
+			}
+		
+		}
+		
+		System.out.println("Ficha de Compra: Forma de pagamento: "+formasPagamento+ " Bandeira do cartão: "+bandeira+ " Tipo de Pagamento: "+tipoDePagamento);
+		
+		
+	}
+
+}
